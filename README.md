@@ -1,16 +1,14 @@
-# perfume_store_mo
 
-A new Flutter project.
 
-## Getting Started
+#### A Perfume Store Flutter project for SWD subject.
 
-This project is a starting point for a Flutter application.
+#### A few resources want to get at the finish of project:
 
-A few resources to get you started if this is your first Flutter project:
+![Welcome screen widget](./images/welcome.png)
+![Activity screen widget](./images/activity.png)
+![Cart screen widget](./images/cart.png)
+![Product Detail screen widget](./images/product_detail.png)
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+#### Connect me via phuthse85@gmail.com
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+##### Copyright &#169; 2024 Phuth
