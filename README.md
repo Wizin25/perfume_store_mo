@@ -4,10 +4,10 @@
 
 #### A few resources want to get at the finish of project:
 
-![Welcome screen widget]([./images](https://github.com/Phuthse/perfume_store_mo/tree/main/assets/images)/welcome.png)
-![Activity screen widget]([./images](https://github.com/Phuthse/perfume_store_mo/tree/main/assets/images)/activity.png)
-![Cart screen widget]([./images](https://github.com/Phuthse/perfume_store_mo/tree/main/assets/images)/cart.png)
-![Product Detail screen widget]([./images](https://github.com/Phuthse/perfume_store_mo/tree/main/assets/images)/product_detail.png)
+![Welcome screen widget](https://github.com/Phuthse/perfume_store_mo/tree/main/assets/images/welcome.png)
+![Activity screen widget](https://github.com/Phuthse/perfume_store_mo/tree/main/assets/images/activity.png)
+![Cart screen widget](https://github.com/Phuthse/perfume_store_mo/tree/main/assets/images/cart.png)
+![Product Detail screen widget](https://github.com/Phuthse/perfume_store_mo/tree/main/assets/images/product_detail.png)
 
 #### Connect me via phuthse85@gmail.com
 
