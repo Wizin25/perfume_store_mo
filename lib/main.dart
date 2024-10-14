@@ -1,9 +1,12 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:perfume_store_mo/pages/bottomnav.dart';
-import 'package:perfume_store_mo/pages/home.dart';
-import 'package:perfume_store_mo/pages/login.dart';
+import 'package:perfume_store_mo/pages/cart.dart';
+import 'package:perfume_store_mo/pages/register.dart';
+import 'package:perfume_store_mo/pages/start.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(const MyApp());
 }
 
@@ -19,8 +22,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: Bottomnav(),
+      home: const Cart(),
     );
   }
-  
 }

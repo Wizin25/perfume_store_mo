@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:perfume_store_mo/pages/bottomnav.dart';
 import 'package:perfume_store_mo/pages/details.dart';
 import 'package:perfume_store_mo/widget/widget_support.dart';
 
@@ -75,15 +76,15 @@ class _HomeState extends State < Home > {
                     
                   GestureDetector(
                     onTap: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => Details()));
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => const Details()));
                     },
                     child: Container(
-                      margin: EdgeInsets.all(5.0),
+                      margin: const EdgeInsets.all(5.0),
                       child: Material(
                         elevation: 10.0,
                         borderRadius: BorderRadius.circular(20.0),
                         child: Container(
-                          padding: EdgeInsets.all(10.0),
+                          padding: const EdgeInsets.all(10.0),
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
@@ -110,12 +111,12 @@ class _HomeState extends State < Home > {
                   ),
                   const SizedBox(width: 5.0),
                   Container(
-                    margin: EdgeInsets.all(5.0),
+                    margin: const EdgeInsets.all(5.0),
                     child: Material(
                       elevation: 10.0,
                       borderRadius: BorderRadius.circular(20.0),
                       child: Container(
-                        padding: EdgeInsets.all(10.0),
+                        padding: const EdgeInsets.all(10.0),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
@@ -141,12 +142,12 @@ class _HomeState extends State < Home > {
                   ),
                   const SizedBox(width: 5.0),
                   Container(
-                    margin: EdgeInsets.all(5.0),
+                    margin: const EdgeInsets.all(5.0),
                     child: Material(
                       elevation: 10.0,
                       borderRadius: BorderRadius.circular(20.0),
                       child: Container(
-                        padding: EdgeInsets.all(10.0),
+                        padding: const EdgeInsets.all(10.0),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
@@ -172,12 +173,12 @@ class _HomeState extends State < Home > {
                   ),
                   const SizedBox(width: 5.0),
                   Container(
-                    margin: EdgeInsets.all(5.0),
+                    margin: const EdgeInsets.all(5.0),
                     child: Material(
                       elevation: 10.0,
                       borderRadius: BorderRadius.circular(20.0),
                       child: Container(
-                        padding: EdgeInsets.all(10.0),
+                        padding: const EdgeInsets.all(10.0),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
@@ -237,12 +238,12 @@ class _HomeState extends State < Home > {
                   children: [
                     
                   Container(
-                    margin: EdgeInsets.all(5.0),
+                    margin: const EdgeInsets.all(5.0),
                     child: Material(
                       elevation: 10.0,
                       borderRadius: BorderRadius.circular(20.0),
                       child: Container(
-                        padding: EdgeInsets.all(10.0),
+                        padding: const EdgeInsets.all(10.0),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
@@ -268,12 +269,12 @@ class _HomeState extends State < Home > {
                   ),
                   const SizedBox(width: 5.0),
                   Container(
-                    margin: EdgeInsets.all(5.0),
+                    margin: const EdgeInsets.all(5.0),
                     child: Material(
                       elevation: 10.0,
                       borderRadius: BorderRadius.circular(20.0),
                       child: Container(
-                        padding: EdgeInsets.all(10.0),
+                        padding: const EdgeInsets.all(10.0),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
@@ -299,12 +300,12 @@ class _HomeState extends State < Home > {
                   ),
                   const SizedBox(width: 5.0),
                   Container(
-                    margin: EdgeInsets.all(5.0),
+                    margin: const EdgeInsets.all(5.0),
                     child: Material(
                       elevation: 10.0,
                       borderRadius: BorderRadius.circular(20.0),
                       child: Container(
-                        padding: EdgeInsets.all(10.0),
+                        padding: const EdgeInsets.all(10.0),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
@@ -330,12 +331,12 @@ class _HomeState extends State < Home > {
                   ),
                   const SizedBox(width: 5.0),
                   Container(
-                    margin: EdgeInsets.all(5.0),
+                    margin: const EdgeInsets.all(5.0),
                     child: Material(
                       elevation: 10.0,
                       borderRadius: BorderRadius.circular(20.0),
                       child: Container(
-                        padding: EdgeInsets.all(10.0),
+                        padding: const EdgeInsets.all(10.0),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
@@ -365,11 +366,15 @@ class _HomeState extends State < Home > {
               ),
             ],
           ),
+        
         ),
+        
       ),
-
-
       
+
+
+
     );
+    
   }
 }

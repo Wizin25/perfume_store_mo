@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1044064984825",
+    "project_id": "perfumestore-a4646",
+    "storage_bucket": "perfumestore-a4646.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1044064984825:android:8697edd7b110701462cc28",
+        "android_client_info": {
+          "package_name": "com.example.perfume_store_mo"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyANu36ulA9B9SVKi-_LZQb0TGYN0ky4xPs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

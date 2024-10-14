@@ -47,31 +47,38 @@ class _DetailsState extends State<Details> {
                 
             Container(
               
-              margin: const EdgeInsets.only(right: 300.0),
+              margin: const EdgeInsets.only(right: 100.0),
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [         
-                    GestureDetector(
-                      onTap: (){
-                        if(q>1) {
-                          q--;
-                        }
-                        setState(() {
-                          
-                        });
-                      },
-                      child: Container(child: const Icon(Icons.remove, color: Colors.black))),
-                    Text(q.toString(), style: AppWidget.boldText()),
-                    GestureDetector(
-                      onTap: (){
-                        q++;
-                        setState(() {
-                          
-                        });
-                      },
-                      child: Container(child: const Icon(Icons.add, color: Colors.black))),
-                  ],
-                ),
+                                    children: [
+                                      GestureDetector(
+                                          onTap: () {
+                                            if (q > 1) {
+                                              q--;
+                                            }
+                                            setState(() {});
+                                          },
+                                          child: Container(
+                                              child: const Icon(Icons.remove,
+                                                  color: Colors.black))),
+                                      
+                                      SizedBox(width: 10,),
+                                      Container(
+                                        padding: EdgeInsets.only(left: 20, right: 20),
+                                        decoration: BoxDecoration(border: Border.all(width: 1), borderRadius: BorderRadius.circular(25)),
+                                        child: Text(q.toString(),
+                                            style: AppWidget.boldText()),
+                                      ),
+                                      SizedBox(width: 10,),
+                                      GestureDetector(
+                                          onTap: () {
+                                            q++;
+                                            setState(() {});
+                                          },
+                                          child: Container(
+                                              child: const Icon(Icons.add,
+                                                  color: Colors.black))),
+                                    ],
+                                  ),
             ),
             const SizedBox(height: 20.0),
 

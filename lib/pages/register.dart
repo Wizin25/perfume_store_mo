@@ -1,43 +1,53 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:perfume_store_mo/pages/bottomnav.dart';
-import 'package:perfume_store_mo/pages/forgotpas.dart';
-import 'package:perfume_store_mo/pages/register.dart';
-import 'package:perfume_store_mo/pages/start.dart';
+import 'package:perfume_store_mo/pages/login.dart';
 import 'package:perfume_store_mo/widget/widget_support.dart';
-import 'package:sign_in_button/sign_in_button.dart';
 
-class LogIn extends StatefulWidget {
-  const LogIn({super.key});
+class Register extends StatefulWidget {
+  const Register({super.key});
 
   @override
-  State<LogIn> createState() => _LogInState();
+  State<Register> createState() => _RegisterState();
 }
 
-class _LogInState extends State<LogIn> {
+class _RegisterState extends State<Register> {
   String email = "", password = "";
+
+  TextEditingController emailcontroller = TextEditingController();
+  TextEditingController passwordcontroller = TextEditingController();
+
   final _formkey = GlobalKey<FormState>();
 
-  TextEditingController useremailcontroller = new TextEditingController();
-  TextEditingController userpasswordcontroller = new TextEditingController();
+  registration() async {
+    if (password != null) {
+      try {
+        UserCredential userCredential = await FirebaseAuth.instance
+            .createUserWithEmailAndPassword(email: email, password: password);
 
-  userLogin() async {
-    try {
-      await FirebaseAuth.instance
-          .signInWithEmailAndPassword(email: email, password: password);
-    } on FirebaseAuthException catch (e) {
-      if (e.code == 'user-not-found') {
         ScaffoldMessenger.of(context).showSnackBar(SnackBar(
             content: Text(
-          "No User Found for that Email",
-          style: TextStyle(fontSize: 18.0, color: Colors.black),
+          "Registered Successfully!",
+          style: TextStyle(fontSize: 20.0),
         )));
-      } else if (e.code == 'wrong-password') {
-        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-            content: Text(
-          "Wrong Password Provided by User",
-          style: TextStyle(fontSize: 18.0, color: Colors.black),
-        )));
+
+        Navigator.pushReplacement(
+            context, MaterialPageRoute(builder: (context) => Bottomnav()));
+
+      } on FirebaseException catch (e) {
+        if (e.code == 'weak-password') {
+          ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+              content: Text(
+            "Password Provided is too weak",
+            style: TextStyle(fontSize: 18.0),
+          )));
+        } else if (e.code == 'email-already-in-use') {
+          ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+              content: Text(
+            "Account already exist",
+            style: TextStyle(fontSize: 18.0),
+          )));
+        }
       }
     }
   }
@@ -49,8 +59,7 @@ class _LogInState extends State<LogIn> {
       appBar: AppBar(
         leading: GestureDetector(
             onTap: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => const Start()));
+              Navigator.pop(context);
             },
             child: const Icon(Icons.arrow_back)),
       ),
@@ -71,7 +80,7 @@ class _LogInState extends State<LogIn> {
                 children: [
                   Container(
                     child: Text(
-                      "Welcome!",
+                      "Register",
                       style: AppWidget.boldText(),
                     ),
                   ),
@@ -79,102 +88,73 @@ class _LogInState extends State<LogIn> {
                     height: 100.0,
                   ),
                   TextFormField(
-                    controller: useremailcontroller,
+                    controller: emailcontroller,
                     validator: (value) {
                       if (value == null || value.isEmpty) {
                         return 'Please Enter Email';
                       }
                       return null;
                     },
-                    decoration: InputDecoration(
-                        hintText: "Email",
+                    decoration: const InputDecoration(
+                        hintText: "Enter your email",
                         prefixIcon: Icon(Icons.email_outlined)),
                   ),
                   const SizedBox(
                     height: 30.0,
                   ),
                   TextFormField(
-                    controller: userpasswordcontroller,
+                    obscureText: true,
+                    controller: passwordcontroller,
                     validator: (value) {
                       if (value == null || value.isEmpty) {
                         return 'Please Enter Password';
                       }
                       return null;
                     },
-                    obscureText: true,
-                    decoration: InputDecoration(
-                        hintText: "Password",
+                    decoration: const InputDecoration(
+                        hintText: "Enter your password",
                         prefixIcon: Icon(Icons.password_outlined)),
-                  ),
-                  const SizedBox(
-                    height: 30.0,
-                  ),
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const Forgotpas()));
-                    },
-                    child: Container(
-                        margin: const EdgeInsets.only(left: 225),
-                        child: Text("Forgot Password?",
-                            style: AppWidget.lightText())),
                   ),
                   const SizedBox(
                     height: 50.0,
                   ),
                   GestureDetector(
-                    onTap: () {
+                    onTap: () async {
                       if (_formkey.currentState!.validate()) {
                         setState(() {
-                          email = useremailcontroller.text;
-                          password = userpasswordcontroller.text;
+                          email = emailcontroller.text;
+                          password = passwordcontroller.text;
                         });
                       }
-                      userLogin();
+                      registration();
                     },
                     child: Container(
                       decoration: BoxDecoration(
                           color: const Color.fromARGB(255, 0, 0, 0),
                           borderRadius: BorderRadius.circular(10.0)),
                       padding: const EdgeInsets.only(
-                          left: 159, right: 159, top: 15, bottom: 15),
-                      child: Text("Login", style: AppWidget.whiteText()),
+                          left: 148, right: 148, top: 15, bottom: 15),
+                      child: Text("Register", style: AppWidget.whiteText()),
                     ),
                   ),
-
                   const SizedBox(
-                    height: 70.0,
-                  ),
-                  Text("---------------Or Login With---------------"),
-                  const SizedBox(
-                    height: 20.0,
-                  ),
-                  Container(
-                    margin: const EdgeInsets.only(left: 45),
-
-                  //Add login google button here
-
-                  ),
-                  const SizedBox(
-                    height: 80.0,
+                    height: 40.0,
                   ),
                   Container(
                       margin: const EdgeInsets.only(left: 60),
                       child: Row(
                         children: [
-                          const Text("Don't have an account? "),
+                          const Text("Already have an account? "),
                           GestureDetector(
                             onTap: () {
                               Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => const Register()));
+                                      builder: (context) => const LogIn()));
                             },
                             child: Container(
                                 child: Text(
-                              "Register Now",
+                              "Login Now",
                               style: AppWidget.pinkText(),
                             )),
                           ),

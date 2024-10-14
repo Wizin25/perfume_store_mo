@@ -33,4 +33,11 @@ class AppWidget{
     );
   }
 
+  static TextStyle pinkText(){
+    return const TextStyle(
+      color: Color.fromARGB(95, 233, 157, 201),
+      fontSize: 16.0,
+      fontWeight: FontWeight.w500,
+    );
+  }
 }
