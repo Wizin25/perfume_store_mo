@@ -1,16 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:perfume_store_mo/pages/activitydetails.dart';
 import 'package:perfume_store_mo/pages/details.dart';
 import 'package:perfume_store_mo/widget/widget_support.dart';
 
-class Activity extends StatefulWidget {
-  const Activity({super.key});
+class Justarrived extends StatefulWidget {
+  const Justarrived({super.key});
 
   @override
-  State<Activity> createState() => _ActivityState();
+  State<Justarrived> createState() => _JustarrivedState();
 }
 
-class _ActivityState extends State<Activity> {
+class _JustarrivedState extends State<Justarrived> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -48,16 +47,16 @@ class _ActivityState extends State<Activity> {
               ),
               const SizedBox(height: 25.0),
               Container(
-                margin: EdgeInsets.only(left: 160),
+                margin: EdgeInsets.only(left: 140),
                 child: Text(
-                  "Activity",
+                  "Just Arrived",
                   style: AppWidget.headLineText(),
                 ),
               ),
               Container(
-                margin: EdgeInsets.only(left: 60),
+                margin: EdgeInsets.only(left: 110),
                 child: Text(
-                  "Click on product to see User Reviews",
+                  "Recently Arrived Perfumes",
                   style: AppWidget.lightText(),
                 ),
               ),
@@ -72,7 +71,7 @@ class _ActivityState extends State<Activity> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => const Activitydetails()));
+                                builder: (context) => const Details()));
                       },
                       child: Container(
                         margin: const EdgeInsets.all(5.0),
@@ -105,7 +104,7 @@ class _ActivityState extends State<Activity> {
                     ),
                     const SizedBox(width: 5.0),
                     GestureDetector(
-                      onTap: () {
+                      onTap: (){
                         Navigator.push(
                             context,
                             MaterialPageRoute(
@@ -127,11 +126,8 @@ class _ActivityState extends State<Activity> {
                                   "50ml",
                                   style: AppWidget.lightText(),
                                 ),
-                                Image.asset(
-                                    "images/Chopard-Happy-Bigaradia.jpg",
-                                    height: 170,
-                                    width: 170,
-                                    fit: BoxFit.cover),
+                                Image.asset("images/Chopard-Happy-Bigaradia.jpg",
+                                    height: 170, width: 170, fit: BoxFit.cover),
                                 const SizedBox(height: 10.0),
                                 Text(
                                   "\$249",
@@ -154,7 +150,7 @@ class _ActivityState extends State<Activity> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     GestureDetector(
-                      onTap: () {
+                      onTap: (){
                         Navigator.push(
                             context,
                             MaterialPageRoute(
@@ -191,7 +187,7 @@ class _ActivityState extends State<Activity> {
                     ),
                     const SizedBox(width: 5.0),
                     GestureDetector(
-                      onTap: () {
+                      onTap: (){
                         Navigator.push(
                             context,
                             MaterialPageRoute(
@@ -213,11 +209,8 @@ class _ActivityState extends State<Activity> {
                                   "50ml",
                                   style: AppWidget.lightText(),
                                 ),
-                                Image.asset(
-                                    "images/Chopard-Happy-Bigaradia.jpg",
-                                    height: 170,
-                                    width: 170,
-                                    fit: BoxFit.cover),
+                                Image.asset("images/Chopard-Happy-Bigaradia.jpg",
+                                    height: 170, width: 170, fit: BoxFit.cover),
                                 const SizedBox(height: 10.0),
                                 Text(
                                   "\$249",

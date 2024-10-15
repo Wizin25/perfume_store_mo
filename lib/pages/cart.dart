@@ -142,7 +142,7 @@ class _CartState extends State<Cart> {
                   ],
                 ),
               ),
-              const SizedBox(height: 590.0),
+              const SizedBox(height: 515.0),
               Container(
                 decoration: BoxDecoration(color: const Color.fromARGB(255, 231, 228, 228)),
                 padding: EdgeInsets.all(10),

@@ -1,17 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:perfume_store_mo/pages/bestseller.dart';
 import 'package:perfume_store_mo/pages/details.dart';
-import 'package:perfume_store_mo/pages/justarrived.dart';
 import 'package:perfume_store_mo/widget/widget_support.dart';
 
-class Home extends StatefulWidget {
-  const Home({super.key});
+class Bestseller extends StatefulWidget {
+  const Bestseller({super.key});
 
   @override
-  State<Home> createState() => _HomeState();
+  State<Bestseller> createState() => _BestsellerState();
 }
 
-class _HomeState extends State<Home> {
+class _BestsellerState extends State<Bestseller> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,11 +24,16 @@ class _HomeState extends State<Home> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Container(
-                    padding: const EdgeInsets.all(4.0),
-                    child: const Icon(
-                      Icons.menu,
-                      color: Colors.black,
+                  GestureDetector(
+                    onTap: (){
+                      Navigator.pop(context);
+                    },
+                    child: Container(
+                      padding: const EdgeInsets.all(4.0),
+                      child: const Icon(
+                        Icons.arrow_back,
+                        color: Colors.black,
+                      ),
                     ),
                   ),
                   Container(
@@ -43,36 +46,19 @@ class _HomeState extends State<Home> {
                 ],
               ),
               const SizedBox(height: 25.0),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    "Best Sellers",
-                    style: AppWidget.headLineText(),
-                  ),
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const Bestseller()));
-                    },
-                    child: Container(
-                      padding: const EdgeInsets.all(6.0),
-                      decoration: BoxDecoration(
-                          color: const Color.fromARGB(255, 54, 52, 52),
-                          borderRadius: BorderRadius.circular(4)),
-                      child: Text(
-                        "see all>",
-                        style: AppWidget.whiteText(),
-                      ),
-                    ),
-                  ),
-                ],
+              Container(
+                margin: EdgeInsets.only(left: 140),
+                child: Text(
+                  "Best Sellers",
+                  style: AppWidget.headLineText(),
+                ),
               ),
-              Text(
-                "The Best Perfume Ever",
-                style: AppWidget.lightText(),
+              Container(
+                margin: EdgeInsets.only(left: 120),
+                child: Text(
+                  "The Best Perfume Ever",
+                  style: AppWidget.lightText(),
+                ),
               ),
               const SizedBox(height: 25.0),
               SingleChildScrollView(
@@ -150,38 +136,6 @@ class _HomeState extends State<Home> {
                 ),
               ),
               const SizedBox(height: 25.0),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    "Just Arrived",
-                    style: AppWidget.headLineText(),
-                  ),
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const Justarrived()));
-                    },
-                    child: Container(
-                      padding: const EdgeInsets.all(6.0),
-                      decoration: BoxDecoration(
-                          color: const Color.fromARGB(255, 54, 52, 52),
-                          borderRadius: BorderRadius.circular(4)),
-                      child: Text(
-                        "see all>",
-                        style: AppWidget.whiteText(),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-              Text(
-                "Recently Arrived Perfumes",
-                style: AppWidget.lightText(),
-              ),
-              const SizedBox(height: 25.0),
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: Row(
@@ -197,13 +151,13 @@ class _HomeState extends State<Home> {
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              const Text("Lancome Idol Idole Nectar"),
+                              const Text("BVLGARI Rose Goldea"),
                               const SizedBox(height: 5.0),
                               Text(
                                 "50ml",
                                 style: AppWidget.lightText(),
                               ),
-                              Image.asset("images/lancome_idole_eau_de_parfum_nectar_.png",
+                              Image.asset("images/BVLGARI-Rose-Goldea.jpg",
                                   height: 170, width: 170, fit: BoxFit.cover),
                               const SizedBox(height: 10.0),
                               Text(
@@ -226,13 +180,13 @@ class _HomeState extends State<Home> {
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              const Text("Christian Dior Happy Hour"),
+                              const Text("Chopard Happy Bigaradia"),
                               const SizedBox(height: 5.0),
                               Text(
                                 "50ml",
                                 style: AppWidget.lightText(),
                               ),
-                              Image.asset("images/CHRISTIAN-DIOR-Happy-Hour.png",
+                              Image.asset("images/Chopard-Happy-Bigaradia.jpg",
                                   height: 170, width: 170, fit: BoxFit.cover),
                               const SizedBox(height: 10.0),
                               Text(

@@ -35,6 +35,7 @@ dependencies:
   firebase_auth: ^5.3.1
   cloud_firestore: ^5.4.4
   sign_in_button: ^3.2.0
+  flutter_rating_bar: ^4.0.1
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -69,7 +70,9 @@ flutter:
   
   - images/BVLGARI-Rose-Goldea.jpg
   - images/Chopard-Happy-Bigaradia.jpg
-  - images/lg.png
+  - images/lancome_idole_eau_de_parfum_nectar_.png
+  - images/CHRISTIAN-DIOR-Happy-Hour.png
+  - images/user.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

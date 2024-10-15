@@ -1,7 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:perfume_store_mo/pages/cart.dart';
-import 'package:perfume_store_mo/pages/register.dart';
+import 'package:perfume_store_mo/pages/bottomnav.dart';
 import 'package:perfume_store_mo/pages/start.dart';
 
 void main() async {
@@ -22,7 +21,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: const Cart(),
+      home: Bottomnav(),
     );
   }
 }
