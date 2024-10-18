@@ -83,7 +83,7 @@ class _ForgotpasState extends State<Forgotpas> {
                       controller: emailcontroller,
                       validator: (value) {
                         if (value == null || value.isEmpty) {
-                          return 'Please Enter Email';
+                          return 'Provide your email and we will send you a link to reset your password';
                         }
                         return null;
                       },

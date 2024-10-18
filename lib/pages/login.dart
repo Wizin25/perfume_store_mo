@@ -69,11 +69,9 @@ class _LogInState extends State<LogIn> {
               key: _formkey,
               child: Column(
                 children: [
-                  Container(
-                    child: Text(
-                      "Welcome!",
-                      style: AppWidget.boldText(),
-                    ),
+                  Text(
+                    "Welcome!",
+                    style: AppWidget.boldText(),
                   ),
                   const SizedBox(
                     height: 100.0,
@@ -86,7 +84,7 @@ class _LogInState extends State<LogIn> {
                       }
                       return null;
                     },
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                         hintText: "Email",
                         prefixIcon: Icon(Icons.email_outlined)),
                   ),
@@ -102,7 +100,7 @@ class _LogInState extends State<LogIn> {
                       return null;
                     },
                     obscureText: true,
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                         hintText: "Password",
                         prefixIcon: Icon(Icons.password_outlined)),
                   ),
@@ -137,25 +135,22 @@ class _LogInState extends State<LogIn> {
                     child: Container(
                       decoration: BoxDecoration(
                           color: const Color.fromARGB(255, 0, 0, 0),
-                          borderRadius: BorderRadius.circular(10.0)),
+                          borderRadius: BorderRadius.circular(10.0),
+                          border: Border(
+                              bottom:
+                                  BorderSide(color: Colors.black, width: 1))),
                       padding: const EdgeInsets.only(
                           left: 159, right: 159, top: 15, bottom: 15),
                       child: Text("Login", style: AppWidget.whiteText()),
                     ),
                   ),
-
                   const SizedBox(
-                    height: 70.0,
+                    height: 60.0,
                   ),
-                  Text("---------------Or Login With---------------"),
+                  const Text("Or"),
+                  
                   const SizedBox(
                     height: 20.0,
-                  ),
-                  Container(
-                    margin: const EdgeInsets.only(left: 45),
-
-                  //Add login google button here
-
                   ),
                   const SizedBox(
                     height: 80.0,

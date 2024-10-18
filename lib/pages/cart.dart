@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:perfume_store_mo/pages/bottomnav.dart';
+import 'package:perfume_store_mo/pages/checkout.dart';
 import 'package:perfume_store_mo/widget/widget_support.dart';
 
 class Cart extends StatefulWidget {
@@ -10,11 +11,12 @@ class Cart extends StatefulWidget {
 }
 
 class _CartState extends State<Cart> {
-  int q = 1;
+  int q = 2;
+  int q1 = 1;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      //backgroundColor: Colors.white,
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: Container(
@@ -98,7 +100,7 @@ class _CartState extends State<Cart> {
                                     children: [
                                       GestureDetector(
                                           onTap: () {
-                                            if (q > 1) {
+                                            if (q > 2) {
                                               q--;
                                             }
                                             setState(() {});
@@ -142,9 +144,96 @@ class _CartState extends State<Cart> {
                   ],
                 ),
               ),
-              const SizedBox(height: 515.0),
               Container(
-                decoration: BoxDecoration(color: const Color.fromARGB(255, 231, 228, 228)),
+                margin: EdgeInsets.only(left: 15, right: 15),
+                decoration: BoxDecoration(
+                    border: Border(
+                        bottom: BorderSide(
+                            color: Color.fromARGB(95, 233, 157, 201), width: 3))),
+                child: Row(
+                  children: [
+                    Container(
+                      margin: const EdgeInsets.all(15.0),
+                      child: Image.asset(
+                        "images/lancome_idole_eau_de_parfum_nectar_.png",
+                        width: MediaQuery.of(context).size.width / 4,
+                        height: MediaQuery.of(context).size.height / 8,
+                        fit: BoxFit.fill,
+                      ),
+                    ),
+                    Container(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text("Lancome Idol Idole Nectar"),
+                          SizedBox(
+                            height: 25,
+                          ),
+                          Text("size: 50ml"),
+                          SizedBox(
+                            height: 5,
+                          ),
+                          Container(
+                            child: Row(
+                              children: [
+                                Text(
+                                  "\$218.00",
+                                  style: TextStyle(color: Colors.red),
+                                ),
+                                Container(
+                                  margin: const EdgeInsets.only(left: 60.0),
+                                  child: Row(
+                                    children: [
+                                      GestureDetector(
+                                          onTap: () {
+                                            if (q1 > 1) {
+                                              q1--;
+                                            }
+                                            setState(() {});
+                                          },
+                                          child: Container(
+                                              child: const Icon(Icons.remove,
+                                                  color: Colors.black))),
+                                      SizedBox(
+                                        width: 10,
+                                      ),
+                                      Container(
+                                        padding: EdgeInsets.only(
+                                            left: 20, right: 20),
+                                        decoration: BoxDecoration(
+                                            border: Border.all(width: 1),
+                                            borderRadius:
+                                                BorderRadius.circular(25)),
+                                        child: Text(q1.toString(),
+                                            style: AppWidget.boldText()),
+                                      ),
+                                      SizedBox(
+                                        width: 10,
+                                      ),
+                                      GestureDetector(
+                                          onTap: () {
+                                            q1++;
+                                            setState(() {});
+                                          },
+                                          child: Container(
+                                              child: const Icon(Icons.add,
+                                                  color: Colors.black))),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              const SizedBox(height: 365.0),
+              Container(
+                decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(10)),
+                margin: EdgeInsets.only(left: 10, right: 10,),
                 padding: EdgeInsets.all(10),
            
                 child: Row(
@@ -156,12 +245,20 @@ class _CartState extends State<Cart> {
                         style: TextStyle(fontSize: 23),
                       ),
                     ),
-                    Container(
-                      decoration: BoxDecoration(color: Color.fromARGB(95, 233, 157, 201), borderRadius: BorderRadius.circular(15) ),
-                      padding: EdgeInsets.only(top: 23, bottom: 23, left: 25, right: 25),
-                      child: Text(
-                        "Check Out (1)",
-                        style: TextStyle(fontSize: 18),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const Checkout()));
+                      },
+                      child: Container(
+                        decoration: BoxDecoration(color: Color.fromARGB(95, 233, 157, 201), borderRadius: BorderRadius.circular(15) ),
+                        padding: EdgeInsets.only(top: 23, bottom: 23, left: 25, right: 25),
+                        child: Text(
+                          "Check Out (1)",
+                          style: TextStyle(fontSize: 18),
+                        ),
                       ),
                     )
                   ],

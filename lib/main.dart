@@ -1,6 +1,8 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:perfume_store_mo/pages/bottomnav.dart';
+import 'package:perfume_store_mo/pages/login.dart';
+import 'package:perfume_store_mo/pages/logingoogle.dart';
 import 'package:perfume_store_mo/pages/start.dart';
 
 void main() async {
@@ -21,7 +23,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: Bottomnav(),
+      home:Bottomnav(),
     );
   }
 }
