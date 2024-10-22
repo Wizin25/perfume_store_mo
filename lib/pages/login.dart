@@ -27,7 +27,7 @@ class _LogInState extends State<LogIn> {
     try {
       await FirebaseAuth.instance
           .signInWithEmailAndPassword(email: email, password: password);
-          //Navigator.pop(context);
+      //Navigator.pop(context);
     } on FirebaseAuthException catch (e) {
       ScaffoldMessenger.of(context).showSnackBar(SnackBar(
           content: Text(
@@ -40,6 +40,7 @@ class _LogInState extends State<LogIn> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
         leading: GestureDetector(
@@ -52,12 +53,12 @@ class _LogInState extends State<LogIn> {
       body: SingleChildScrollView(
         child: Container(
             //set background image for login here
-            /*decoration: const BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage("images/lg.png"),
-              fit: BoxFit.cover,
+            decoration: const BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage("images/start_pic.png"),
+                fit: BoxFit.contain,
+              ),
             ),
-          ),*/
             alignment: Alignment.center,
             padding: const EdgeInsets.all(32),
             child: Form(
@@ -134,17 +135,17 @@ class _LogInState extends State<LogIn> {
                           border: Border(
                               bottom:
                                   BorderSide(color: Colors.black, width: 1))),
-                      padding: const EdgeInsets.only(
-                          left: 159, right: 159, top: 15, bottom: 15),
+                      padding: const EdgeInsets.symmetric(
+                          vertical: 10, horizontal: 90),
                       child: Text("Login", style: AppWidget.whiteText()),
                     ),
                   ),
                   const SizedBox(
-                    height: 60.0,
+                    height: 10.0,
                   ),
                   const Text("Or"),
                   const SizedBox(
-                    height: 30,
+                    height: 10,
                   ),
                   Container(
                       child: SignInButton(
@@ -158,7 +159,7 @@ class _LogInState extends State<LogIn> {
                     height: 20.0,
                   ),
                   const SizedBox(
-                    height: 80.0,
+                    height: 50.0,
                   ),
                   Container(
                       margin: const EdgeInsets.only(left: 60),

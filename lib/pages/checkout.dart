@@ -22,7 +22,7 @@ class _CheckoutState extends State<Checkout> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               Container(
-                margin: EdgeInsets.only(right: 45, top: 65, left: 10),
+                margin: EdgeInsets.only(right: 30, top: 65, left: 5),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -155,14 +155,18 @@ class _CheckoutState extends State<Checkout> {
                   ],
                 ),
               ),
-              SizedBox(height: 115,),
+              SizedBox(
+                height: 115,
+              ),
               Container(
-                margin: EdgeInsets.only(left: 10, right: 10, top: 5, bottom: 5),
+                margin: EdgeInsets.only(left: 7, right: 7, top: 5, bottom: 5),
                 padding:
                     EdgeInsets.only(left: 10, right: 10, top: 15, bottom: 15),
                 decoration: BoxDecoration(
                     color: Colors.white,
-                    borderRadius: BorderRadius.circular(10),border: Border(bottom: BorderSide(color: Colors.black, width: 1))),
+                    borderRadius: BorderRadius.circular(10),
+                    border: Border(
+                        bottom: BorderSide(color: Colors.black, width: 1))),
                 child: Row(
                   children: [
                     Container(
@@ -187,13 +191,14 @@ class _CheckoutState extends State<Checkout> {
                                   ),
                                 ),
                                 SizedBox(
-                                  width: 147,
+                                  width: 10,
                                 ),
-                                
                               ],
                             ),
                           ),
-                          SizedBox(height: 5,),
+                          SizedBox(
+                            height: 5,
+                          ),
                           Container(
                             child: Row(
                               children: [
@@ -211,7 +216,9 @@ class _CheckoutState extends State<Checkout> {
                                 Container(
                                   child: Text(
                                     "\$3>",
-                                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                                    style: TextStyle(
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.bold),
                                   ),
                                 )
                               ],
@@ -231,17 +238,17 @@ class _CheckoutState extends State<Checkout> {
                 ),
               ),
               Container(
-
                 margin: EdgeInsets.only(
-                  left: 10,
-                  right: 10,
-                  
+                  left: 8,
+                  right: 8,
                 ),
                 padding:
                     EdgeInsets.only(left: 10, right: 10, top: 15, bottom: 15),
                 decoration: BoxDecoration(
                     color: Colors.white,
-                    borderRadius: BorderRadius.circular(10), border: Border(bottom: BorderSide(color: Colors.black, width: 1))),
+                    borderRadius: BorderRadius.circular(10),
+                    border: Border(
+                        bottom: BorderSide(color: Colors.black, width: 1))),
                 child: Row(
                   children: [
                     Container(
@@ -257,8 +264,17 @@ class _CheckoutState extends State<Checkout> {
                                 SizedBox(
                                   width: 20,
                                 ),
-                                Container(child: Text("Payment Option", style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),),),
-                                SizedBox(width: 47,),
+                                Container(
+                                  child: Text(
+                                    "Payment Option",
+                                    style: TextStyle(
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                ),
+                                SizedBox(
+                                  width: 47,
+                                ),
                                 Container(
                                   child: Text(
                                     "Cash on Delivery>",
@@ -270,7 +286,6 @@ class _CheckoutState extends State<Checkout> {
                               ],
                             ),
                           ),
-                          
                         ],
                       ),
                     )
@@ -278,17 +293,18 @@ class _CheckoutState extends State<Checkout> {
                 ),
               ),
               Container(
-
                 margin: EdgeInsets.only(
-                  left: 10,
-                  right: 10,
+                  left: 8,
+                  right: 8,
                   top: 5,
                 ),
                 padding:
                     EdgeInsets.only(left: 10, right: 10, top: 10, bottom: 10),
                 decoration: BoxDecoration(
                     color: Colors.white,
-                    borderRadius: BorderRadius.circular(10), border: Border(bottom: BorderSide(color: Colors.black, width: 1))),
+                    borderRadius: BorderRadius.circular(10),
+                    border: Border(
+                        bottom: BorderSide(color: Colors.black, width: 1))),
                 child: Row(
                   children: [
                     Container(
@@ -315,7 +331,9 @@ class _CheckoutState extends State<Checkout> {
                               ],
                             ),
                           ),
-                          SizedBox(height: 5,),
+                          SizedBox(
+                            height: 5,
+                          ),
                           Container(
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -328,7 +346,9 @@ class _CheckoutState extends State<Checkout> {
                                         fontWeight: FontWeight.w300),
                                   ),
                                 ),
-                                SizedBox(width: 130,),
+                                SizedBox(
+                                  width: 130,
+                                ),
                                 Container(
                                   child: Text(
                                     "\$676.00",
@@ -352,7 +372,9 @@ class _CheckoutState extends State<Checkout> {
                                         fontWeight: FontWeight.w300),
                                   ),
                                 ),
-                                SizedBox(width: 185,),
+                                SizedBox(
+                                  width: 185,
+                                ),
                                 Container(
                                   child: Text(
                                     "\$3.00",
@@ -376,7 +398,9 @@ class _CheckoutState extends State<Checkout> {
                                         fontWeight: FontWeight.bold),
                                   ),
                                 ),
-                                SizedBox(width: 185,),
+                                SizedBox(
+                                  width: 185,
+                                ),
                                 Container(
                                   child: Text(
                                     "\$679.00",
@@ -403,21 +427,26 @@ class _CheckoutState extends State<Checkout> {
                     borderRadius: BorderRadius.circular(10)),
                 padding: EdgeInsets.all(10),
                 child: Row(
-                  
                   children: [
                     Container(
                       child: Text(
                         "Total: ",
-                        style: TextStyle(fontSize: 23, fontWeight: FontWeight.bold),
+                        style: TextStyle(
+                            fontSize: 23, fontWeight: FontWeight.bold),
                       ),
                     ),
                     Container(
                       child: Text(
                         "\$679.00",
-                        style: TextStyle(fontSize: 23, fontWeight: FontWeight.bold, color: Colors.red),
+                        style: TextStyle(
+                            fontSize: 23,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.red),
                       ),
                     ),
-                    SizedBox(width: 80,),
+                    SizedBox(
+                      width: 72.5,
+                    ),
                     GestureDetector(
                       onTap: () {
                         Navigator.push(
@@ -430,7 +459,7 @@ class _CheckoutState extends State<Checkout> {
                             color: Color.fromARGB(95, 233, 157, 201),
                             borderRadius: BorderRadius.circular(15)),
                         padding: EdgeInsets.only(
-                            top: 23, bottom: 23, left: 25, right: 25),
+                            top: 23, bottom: 25, left: 25, right: 25),
                         child: Text(
                           "Place Order",
                           style: TextStyle(fontSize: 18),

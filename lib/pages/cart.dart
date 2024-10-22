@@ -63,7 +63,8 @@ class _CartState extends State<Cart> {
                 decoration: BoxDecoration(
                     border: Border(
                         bottom: BorderSide(
-                            color: Color.fromARGB(95, 233, 157, 201), width: 3))),
+                            color: Color.fromARGB(95, 233, 157, 201),
+                            width: 3))),
                 child: Row(
                   children: [
                     Container(
@@ -149,7 +150,8 @@ class _CartState extends State<Cart> {
                 decoration: BoxDecoration(
                     border: Border(
                         bottom: BorderSide(
-                            color: Color.fromARGB(95, 233, 157, 201), width: 3))),
+                            color: Color.fromARGB(95, 233, 157, 201),
+                            width: 3))),
                 child: Row(
                   children: [
                     Container(
@@ -230,12 +232,16 @@ class _CartState extends State<Cart> {
                   ],
                 ),
               ),
-              const SizedBox(height: 365.0),
+              const SizedBox(height: 300.0),
               Container(
-                decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(10)),
-                margin: EdgeInsets.only(left: 10, right: 10,),
+                decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(10)),
+                margin: EdgeInsets.only(
+                  left: 10,
+                  right: 10,
+                ),
                 padding: EdgeInsets.all(10),
-           
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -253,8 +259,11 @@ class _CartState extends State<Cart> {
                                 builder: (context) => const Checkout()));
                       },
                       child: Container(
-                        decoration: BoxDecoration(color: Color.fromARGB(95, 233, 157, 201), borderRadius: BorderRadius.circular(15) ),
-                        padding: EdgeInsets.only(top: 23, bottom: 23, left: 25, right: 25),
+                        decoration: BoxDecoration(
+                            color: Color.fromARGB(95, 233, 157, 201),
+                            borderRadius: BorderRadius.circular(15)),
+                        padding: EdgeInsets.only(
+                            top: 23, bottom: 23, left: 25, right: 25),
                         child: Text(
                           "Check Out (1)",
                           style: TextStyle(fontSize: 18),

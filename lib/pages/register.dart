@@ -33,7 +33,6 @@ class _RegisterState extends State<Register> {
 
         Navigator.pushReplacement(
             context, MaterialPageRoute(builder: (context) => Bottomnav()));
-
       } on FirebaseException catch (e) {
         if (e.code == 'weak-password') {
           ScaffoldMessenger.of(context).showSnackBar(SnackBar(
@@ -47,14 +46,13 @@ class _RegisterState extends State<Register> {
             "Account already exist",
             style: TextStyle(fontSize: 18.0),
           )));
-        }else if (e.code == 'invalid-email') {
+        } else if (e.code == 'invalid-email') {
           ScaffoldMessenger.of(context).showSnackBar(SnackBar(
               content: Text(
             "Email address is wrong formatted",
             style: TextStyle(fontSize: 18.0, color: Colors.black),
           )));
         }
-
       }
     }
   }
@@ -73,12 +71,11 @@ class _RegisterState extends State<Register> {
       body: SingleChildScrollView(
         child: Container(
             //set background image for login here
-            /*decoration: const BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage("images/lg.png"),
-              fit: BoxFit.cover,
+            decoration: const BoxDecoration(
+              image: DecorationImage(
+                  image: AssetImage('images/start_pic.png'),
+                  fit: BoxFit.contain),
             ),
-          ),*/
             alignment: Alignment.center,
             padding: const EdgeInsets.all(32),
             child: Form(
@@ -139,8 +136,8 @@ class _RegisterState extends State<Register> {
                       decoration: BoxDecoration(
                           color: const Color.fromARGB(255, 0, 0, 0),
                           borderRadius: BorderRadius.circular(10.0)),
-                      padding: const EdgeInsets.only(
-                          left: 148, right: 148, top: 15, bottom: 15),
+                      padding: const EdgeInsets.symmetric(
+                          vertical: 5, horizontal: 120),
                       child: Text("Register", style: AppWidget.whiteText()),
                     ),
                   ),
