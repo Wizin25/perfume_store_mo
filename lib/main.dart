@@ -1,9 +1,9 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:perfume_store_mo/pages/bottomnav.dart';
 import 'package:perfume_store_mo/pages/login.dart';
-import 'package:perfume_store_mo/pages/logingoogle.dart';
-import 'package:perfume_store_mo/pages/start.dart';
+
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -14,16 +14,28 @@ void main() async {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'The Flutter Way',
-      theme: ThemeData(
-        visualDensity: VisualDensity.adaptivePlatformDensity,
+      
+      home: StreamBuilder<User?>(
+        stream: FirebaseAuth.instance.authStateChanges(),
+        builder: (BuildContext context, AsyncSnapshot snapshot){
+          if(snapshot.hasError){
+            return Text(snapshot.error.toString());
+          }
+
+          if(snapshot.connectionState == ConnectionState.active){
+            if(snapshot.data == null){
+              return LogIn();
+            }
+            else{
+              return Bottomnav(/*title: FirebaseAuth.instance.currentUser!.displayName!*/);
+            }
+          }
+          return Center(child: CircularProgressIndicator());
+        },
       ),
-      home:Bottomnav(),
     );
   }
 }

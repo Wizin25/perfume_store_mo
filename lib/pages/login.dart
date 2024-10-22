@@ -1,7 +1,9 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 import 'package:perfume_store_mo/pages/bottomnav.dart';
 import 'package:perfume_store_mo/pages/forgotpas.dart';
+import 'package:perfume_store_mo/pages/home.dart';
 import 'package:perfume_store_mo/pages/register.dart';
 import 'package:perfume_store_mo/pages/start.dart';
 import 'package:perfume_store_mo/widget/widget_support.dart';
@@ -25,20 +27,13 @@ class _LogInState extends State<LogIn> {
     try {
       await FirebaseAuth.instance
           .signInWithEmailAndPassword(email: email, password: password);
+          //Navigator.pop(context);
     } on FirebaseAuthException catch (e) {
-      if (e.code == 'user-not-found') {
-        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-            content: Text(
-          "No User Found for that Email",
-          style: TextStyle(fontSize: 18.0, color: Colors.black),
-        )));
-      } else if (e.code == 'wrong-password') {
-        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-            content: Text(
-          "Wrong Password Provided by User",
-          style: TextStyle(fontSize: 18.0, color: Colors.black),
-        )));
-      }
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+          content: Text(
+        "Wrong email or password, please check again!",
+        style: TextStyle(fontSize: 18.0, color: Colors.white),
+      )));
     }
   }
 
@@ -148,7 +143,17 @@ class _LogInState extends State<LogIn> {
                     height: 60.0,
                   ),
                   const Text("Or"),
-                  
+                  const SizedBox(
+                    height: 30,
+                  ),
+                  Container(
+                      child: SignInButton(
+                    Buttons.google,
+                    text: "Sign in with Google",
+                    onPressed: () {
+                      signInWithGoogle();
+                    },
+                  )),
                   const SizedBox(
                     height: 20.0,
                   ),
@@ -180,5 +185,28 @@ class _LogInState extends State<LogIn> {
             )),
       ),
     );
+  }
+
+  signInWithGoogle() async {
+    GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
+    GoogleSignInAuthentication? googleAuth = await googleUser?.authentication;
+    AuthCredential credential = GoogleAuthProvider.credential(
+      accessToken: googleAuth?.accessToken,
+      idToken: googleAuth?.idToken,
+    );
+    UserCredential userCredential =
+        await FirebaseAuth.instance.signInWithCredential(credential);
+    print(userCredential.user?.displayName);
+    print(userCredential.user?.email);
+
+    if (userCredential.user != null) {
+      Navigator.of(context)
+          .push(MaterialPageRoute(builder: (context) => Bottomnav()));
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+          content: Text(
+        "Sign in as " + (userCredential.user!.displayName!),
+        style: TextStyle(fontSize: 18.0, color: Colors.white),
+      )));
+    }
   }
 }

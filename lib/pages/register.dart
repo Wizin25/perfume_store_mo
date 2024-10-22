@@ -47,7 +47,14 @@ class _RegisterState extends State<Register> {
             "Account already exist",
             style: TextStyle(fontSize: 18.0),
           )));
+        }else if (e.code == 'invalid-email') {
+          ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+              content: Text(
+            "Email address is wrong formatted",
+            style: TextStyle(fontSize: 18.0, color: Colors.black),
+          )));
         }
+
       }
     }
   }

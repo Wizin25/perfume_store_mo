@@ -1,7 +1,10 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 import 'package:perfume_store_mo/pages/bestseller.dart';
 import 'package:perfume_store_mo/pages/details.dart';
 import 'package:perfume_store_mo/pages/justarrived.dart';
+import 'package:perfume_store_mo/pages/login.dart';
 import 'package:perfume_store_mo/widget/widget_support.dart';
 
 class Home extends StatefulWidget {
@@ -15,9 +18,20 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        actions: [
+          IconButton(onPressed:() async{
+            await GoogleSignIn().signOut();
+            FirebaseAuth.instance.signOut();
+            //Navigator.pushNamed(context, "/LogIn");
+            //Navigator.pop(context);
+          }, icon: Icon(Icons.logout))
+        ],
+      ),
       backgroundColor: Colors.white,
       body: Container(
-        margin: const EdgeInsets.only(top: 65.0, left: 10.0, right: 10.0),
+        margin: const EdgeInsets.only(top: 2.0, left: 10.0, right: 10.0),
         child: SingleChildScrollView(
           scrollDirection: Axis.vertical,
           child: Column(

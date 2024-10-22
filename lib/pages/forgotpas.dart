@@ -22,7 +22,7 @@ class _ForgotpasState extends State<Forgotpas> {
       await FirebaseAuth.instance.sendPasswordResetEmail(email: email);
       ScaffoldMessenger.of(context).showSnackBar(SnackBar(
           content: Text(
-        "Password Reset has been sent!",
+        "Password Recovery has been sent!",
         style: TextStyle(fontSize: 18),
       )));
     } on FirebaseAuthException catch (e) {
@@ -83,7 +83,7 @@ class _ForgotpasState extends State<Forgotpas> {
                       controller: emailcontroller,
                       validator: (value) {
                         if (value == null || value.isEmpty) {
-                          return 'Provide your email and we will send you a link to reset your password';
+                          return 'Please provide your email!';
                         }
                         return null;
                       },
@@ -110,6 +110,10 @@ class _ForgotpasState extends State<Forgotpas> {
                         });
                       }
                       resetPassword();
+                      Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => const LogIn()));
                     },
                     child: Container(
                       child: Row(

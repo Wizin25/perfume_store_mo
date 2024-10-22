@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:perfume_store_mo/pages/activitydetails.dart';
+import 'package:perfume_store_mo/pages/bottomnav.dart';
 import 'package:perfume_store_mo/pages/details.dart';
 import 'package:perfume_store_mo/widget/widget_support.dart';
 
@@ -25,18 +26,7 @@ class _ActivityState extends State<Activity> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.pop(context);
-                    },
-                    child: Container(
-                      padding: const EdgeInsets.all(4.0),
-                      child: const Icon(
-                        Icons.arrow_back,
-                        color: Colors.black,
-                      ),
-                    ),
-                  ),
+                  
                   Container(
                     padding: const EdgeInsets.all(4.0),
                     child: const Icon(
@@ -236,6 +226,7 @@ class _ActivityState extends State<Activity> {
           ),
         ),
       ),
+      
     );
   }
 }
